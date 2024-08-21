@@ -1,6 +1,7 @@
 //print all employee names
 
 let enames=["Rahul","sonia","Priya"]
+
 //for of
 for(ename of enames){
     console.log(ename)
