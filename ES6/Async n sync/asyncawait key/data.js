@@ -2,9 +2,13 @@ let employees=[{id:101,name:"Rahul",sal:45000.00},
     {id:102,name:"Sonia",sal:55000.00}]
 
 let createEmployee=(emp)=>{
+    return new Promise((resolve,reject)=>{
     setTimeout(()=>{
-        employees.push=(emp);
-    },4000)
+        let db_flag=false;
+        db_flag==true?resolve("Data insert"):reject("failed");
+        employees.push(emp)
+    },4000)    
+})
 }
 
 let getEmployee=()=>{
@@ -20,5 +24,10 @@ let getEmployee=()=>{
         document.getElementById("abc").innerHTML=rows
     },1000)
 }
-createEmployee({id:103,name:"Priya",sal:50000})
-getEmployee()
+
+let lunchTime=async()=>{
+   await createEmployee({id:103,name:"Priya",sal:50000})
+   getEmployee()
+}
+lunchTime();
+
